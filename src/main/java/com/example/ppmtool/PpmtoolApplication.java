@@ -8,19 +8,25 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
+@RestController
 public class PpmtoolApplication extends SpringBootServletInitializer {
 
-    @Bean
-    BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+  @RequestMapping("/")
+  public String test() {
+    return "this is a test for deploy";
+  }
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(PpmtoolApplication.class);
-    }
+  @Bean
+  BCryptPasswordEncoder bCryptPasswordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 
-    public static void main(String[] args) {
-        SpringApplication.run(PpmtoolApplication.class, args);
-    }
+  @Override
+  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+    return application.sources(PpmtoolApplication.class);
+  }
+
+  public static void main(String[] args) {
+    SpringApplication.run(PpmtoolApplication.class, args);
+  }
 }
