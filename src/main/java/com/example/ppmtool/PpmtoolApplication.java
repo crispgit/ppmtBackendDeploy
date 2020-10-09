@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PpmtoolApplication extends SpringBootServletInitializer {
 
   @RequestMapping("/")
-  public String test() {
-    return "this is a test for deploy";
+  public String index() {
+    return "index";
   }
 
   @RequestMapping("/hello")
